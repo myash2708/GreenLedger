@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/json-stringify-safe@5.0.1/json-stringify-safe.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Register the Land</h1>
+    <div class="window">
+      <div class="right">
+        <div class="top_bar">
+          <!-- Back button to navigate back to CreditsList.jsx -->
+          <div class="back_button">
+            <button onclick="window.location.href='/buyCredits'">
+              <i class="fa fa-arrow-left"></i> Back
+            </button>
+          </div>
+          <div class="search">
+            <input type="text" placeholder="Search Location" />
+            <button><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+        <div class="right_containery">
+          <form>
+            <div class="form-group">
+              <label for="landName">Land Name:</label>
+              <input type="text" id="landName" name="landName" required />
+            </div>
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <input type="text" id="address" name="address" required />
+            </div>
+            <div class="form-group">
+              <label for="document">Upload Document:</label>
+              <input
+                type="file"
+                id="document"
+                name="document"
+                accept=".pdf,.doc,.docx"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="video">Record Video:</label>
+              <a href="http://localhost:5001/view">
+                <button
+                type="file"
+                id="video"
+                name="video"
+                accept="video/*"
+                required
+              >Record Video</button>
+              </a>
+              
+            </div>
+            <div id="map"></div>
+            <div class="column">
+              <button type="button" onclick="addMarker()">Add Marker</button>
+              <button type="button" onclick="lockArea()">Lock Area</button>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+          <script src="./poly.js"></script>
+          <img id="mu" />
+          <script
+            async
+            defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbclwHdrmNLwoUpd-6qTiD8uF6-95gxxc&callback=initMap"
+          ></script>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  </body>
+</html>
